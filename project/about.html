@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sips & Bites - About Us</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/about-animations.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- SweetAlert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="home.html">
+                <i class="fas fa-coffee"></i>
+                Sips & Bites
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="home.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="products.html">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item admin-only">
+                        <a class="nav-link" href="add-product.html" onclick="return checkAdminAccess(event)">Add Product</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link cart-link" href="cart.html">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="cart-badge" id="cartBadge">0</span>
+                        </a>
+                    </li>
+                    <li class="nav-item ms-3">
+                        <a class="nav-link logout-btn" href="#" onclick="logout()">
+                            <i class="fas fa-sign-out-alt"></i>
+                            Logout
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 animate-fade-right">
+                    <h1 class="page-title">About Sips & Bites</h1>
+                    <p class="page-subtitle">Crafting delicious memories since 2025 with passion, quality, and love</p>
+                </div>
+                <div class="col-lg-6 animate-fade-left">
+                    <div class="page-header-image">
+                        <img src="https://images.pexels.com/photos/1775043/pexels-photo-1775043.jpeg?auto=compress&cs=tinysrgb&w=600" alt="About Us" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Story Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row align-items-center mb-5">
+                <div class="col-lg-6 animate-fade-right">
+                    <div class="story-image">
+                        <img src="https://images.pexels.com/photos/1126359/pexels-photo-1126359.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Our Story" class="img-fluid rounded shadow-lg">
+                        <div class="story-badge">
+                            <i class="fas fa-heart"></i>
+                            <span>Est. 2025</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 animate-fade-left">
+                    <div class="story-content">
+                        <h2 class="section-title text-start">Our Story</h2>
+                        <p class="lead">Sips & Bites began as a dream born from my love for bakeries and the magical feeling of being surrounded by fresh crusts and hot coffee.</p>
+                        <p>I started this mini e-commerce website because I genuinely love bakeries and the feeling of being there. The fresh crust and hot coffee create a whole world for me, and I'm sure for many other people too. I wanted to create something that others would really love to have in their lives - to make their houses feel like a small bakery or cozy café when they order from this website.</p>
+                        <p>I tried to make it as perfect as I could with the information and knowledge I have about frontend development. I'm happy with the output and I hope I can do even better next time. Thanks to anyone who sees this or wants to support this project!</p>
+                        <div class="story-stats">
+                            <div class="row text-center">
+                                <div class="col-4">
+                                    <div class="stat-item">
+                                        <h4 class="text-gradient">New</h4>
+                                        <p class="small text-muted">2025</p>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="stat-item">
+                                        <h4 class="text-gradient">1000+</h4>
+                                        <p class="small text-muted">Happy Customers</p>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="stat-item">
+                                        <h4 class="text-gradient">50+</h4>
+                                        <p class="small text-muted">Products</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission & Values Section -->
+    <section class="py-5 bg-gradient">
+        <div class="container">
+            <div class="row text-center mb-5">
+                <div class="col-12 animate-fade-up">
+                    <h2 class="section-title">Our Mission & Values</h2>
+                    <p class="section-subtitle">The principles that guide everything we do</p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6 animate-fade-up animate-delay-100">
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h4>Made with Love</h4>
+                        <p>Every product is crafted with passion and attention to detail, ensuring that each bite brings joy and satisfaction to our customers.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 animate-fade-up animate-delay-200">
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <h4>Fresh & Natural</h4>
+                        <p>We source the finest, freshest ingredients from local farms and suppliers, ensuring quality and supporting our community.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 animate-fade-up animate-delay-300">
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h4>Community First</h4>
+                        <p>We believe in building strong relationships with our customers and contributing positively to our local community.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="py-5 team-section">
+        <div class="container">
+            <div class="row text-center mb-5">
+                <div class="col-12 animate-fade-up">
+                    <h2 class="section-title">Meet the Developer</h2>
+                    <p class="section-subtitle">The creative mind behind Sweet Delights</p>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="team-hero animate-scale-in">
+                        <div class="row align-items-center">
+                            <div class="col-lg-4 text-center mb-4 mb-lg-0">
+                                <div class="team-image-container">
+                                    <img src="https://images.pexels.com/photos/3756679/pexels-photo-3756679.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Mariam Ehab" class="team-profile-image">
+                                    <div class="team-badge">
+                                        <i class="fas fa-code"></i>
+                                        Developer
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-8">
+                                <h3 class="team-name">Mariam Ehab</h3>
+                                <p class="team-title">Full-Stack Developer & Digital Marketing Specialist</p>
+                                <p class="team-description">
+                                    Motivated Computer Science student who uniquely combines strong technical expertise in web development with creative skills in social media marketing. Skilled in building user-friendly, responsive websites and presenting them in ways that engage the right audience. Passionate about transforming ideas into real projects that create value and impact, bridging the gap between technology and communication to deliver solutions that are both technically solid and strategically impactful.
+                                </p>
+                                <div class="team-skills">
+                                    <span class="skill-tag">Web Development</span>
+                                    <span class="skill-tag">JavaScript</span>
+                                    <span class="skill-tag">HTML/CSS</span>
+                                    <span class="skill-tag">Bootstrap</span>
+                                    <span class="skill-tag">Social Media Marketing</span>
+                                    <span class="skill-tag">UI/UX Design</span>
+                                    <span class="skill-tag">Digital Strategy</span>
+                                </div>
+                                <div class="team-social">
+                                    <a href="#" class="social-link" title="LinkedIn">
+                                        <i class="fab fa-linkedin"></i>
+                                    </a>
+                                    <a href="#" class="social-link" title="GitHub">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                    <a href="#" class="social-link" title="Instagram">
+                                        <i class="fab fa-instagram"></i>
+                                    </a>
+                                    <a href="mailto:mariamehab135721@gmail.com" class="social-link" title="Email">
+                                        <i class="fas fa-envelope"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Awards & Recognition Section -->
+    <section class="py-5 bg-gradient">
+        <div class="container">
+            <div class="row text-center mb-5">
+                <div class="col-12 animate-fade-up">
+                    <h2 class="section-title">Awards & Recognition</h2>
+                    <p class="section-subtitle">Honored to be recognized by our community</p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6 animate-fade-up animate-delay-100">
+                    <div class="award-card">
+                        <div class="award-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <h5>Best Local Bakery</h5>
+                        <p class="small text-muted">City Choice Awards 2023</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 animate-fade-up animate-delay-200">
+                    <div class="award-card">
+                        <div class="award-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h5>5-Star Rating</h5>
+                        <p class="small text-muted">Google Reviews 2023</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 animate-fade-up animate-delay-300">
+                    <div class="award-card">
+                        <div class="award-icon">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <h5>Organic Certified</h5>
+                        <p class="small text-muted">USDA Organic 2022</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 animate-fade-up animate-delay-400">
+                    <div class="award-card">
+                        <div class="award-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <h5>Community Partner</h5>
+                        <p class="small text-muted">Local Business Alliance</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Info Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row text-center mb-5">
+                <div class="col-12 animate-fade-up">
+                    <h2 class="section-title">Visit Us Today</h2>
+                    <p class="section-subtitle">We'd love to welcome you to Sweet Delights</p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 animate-fade-up animate-delay-100">
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h5>Location</h5>
+                        <p>123 Bakery Street<br>Sweet City, SC 12345</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 animate-fade-up animate-delay-200">
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h5>Hours</h5>
+                        <p>Mon-Fri: 6:00 AM - 8:00 PM<br>Sat-Sun: 7:00 AM - 9:00 PM</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 animate-fade-up animate-delay-300">
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <h5>Contact</h5>
+                        <p>Phone: +20 01145368641<br>Email: mariamehab135721@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="footer-brand">
+                        <h4>
+                            <i class="fas fa-coffee"></i>
+                            Sips & Bites
+                        </h4>
+                        <p>Your neighborhood café bringing you the finest baked goods and beverages since 2025.</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-facebook"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <div class="footer-links">
+                        <h5>Quick Links</h5>
+                        <ul>
+                            <li><a href="home.html">Home</a></li>
+                            <li><a href="products.html">Products</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="cart.html">Cart</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-links">
+                        <h5>Categories</h5>
+                        <ul>
+                            <li><a href="#">Breads</a></li>
+                            <li><a href="#">Pastries</a></li>
+                            <li><a href="#">Cakes</a></li>
+                            <li><a href="#">Beverages</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-contact">
+                        <h5>Contact Info</h5>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>123 Bakery Street</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+20 01145368641</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>mariamehab135721@gmail.com</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <p>&copy; 2025 Sips & Bites. All rights reserved.</p>
+                    </div>
+                    <div class="col-md-6 text-md-end">
+                        <p>Made with <i class="fas fa-heart text-danger"></i> by Mariam</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- Auth JS -->
+    <script src="js/auth.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+</html>
