@@ -1,10 +1,7 @@
 // Enhanced Shopping Cart Management Module for Sips & Bites
 // Utility function to format currency
 function formatCurrency(amount) {
-    return new Intl.NumberFormat('en-US', {
-        style: 'currency',
-        currency: 'USD'
-    }).format(amount);
+    return `EGP ${amount.toFixed(2)}`;
 }
 
 // Utility function to show toast notifications
@@ -282,7 +279,7 @@ class CartManager {
                         <div class="cart-item-details">
                             <h5 class="item-title">${item.name}</h5>
                             <p class="cart-item-category">${categoryLabel}</p>
-                            <p class="cart-item-price">${formatCurrency(item.price)} each</p>
+                            <p class="cart-item-price">EGP ${item.price.toFixed(2)} each</p>
                         </div>
                     </div>
                     <div class="col-md-3 col-sm-6 mb-3 mb-md-0">
@@ -301,7 +298,7 @@ class CartManager {
                     </div>
                     <div class="col-md-2 col-sm-4 mb-3 mb-md-0">
                         <div class="text-end">
-                            <div class="cart-item-price fw-bold">${formatCurrency(itemTotal)}</div>
+                            <div class="cart-item-price fw-bold">EGP ${itemTotal.toFixed(2)}</div>
                         </div>
                     </div>
                     <div class="col-md-1 col-sm-2">
@@ -351,7 +348,7 @@ class CartManager {
                         <h6 class="card-title fw-bold">${product.name}</h6>
                         <div class="mt-auto">
                             <div class="d-flex justify-content-between align-items-center mb-3">
-                                <span class="product-price">${formatCurrency(product.price)}</span>
+                                <span class="product-price">EGP ${product.price.toFixed(2)}</span>
                             </div>
                             <div class="d-grid">
                                 <button class="btn btn-primary btn-sm" onclick="cartManager.addToCart('${product.id}')">

@@ -18,53 +18,53 @@ class ProductManager {
             // Breads
             {
                 id: '1',
-                name: 'Artisan Sourdough Bread',
+                name: 'Croissant',
                 price: 8.99,
                 category: 'bread',
-                image: 'https://images.pexels.com/photos/1775043/pexels-photo-1775043.jpeg?auto=compress&cs=tinysrgb&w=400',
+                image: 'images/croissant.jpg',
                 description: 'Traditional sourdough with a crispy crust and tangy flavor'
             },
             {
                 id: '2',
-                name: 'Whole Wheat Sandwich Loaf',
+                name: 'Pain au Chocolat',
                 price: 6.49,
                 category: 'bread',
-                image: 'https://images.pexels.com/photos/1586947/pexels-photo-1586947.jpeg?auto=compress&cs=tinysrgb&w=400',
+                image: 'images/pain-au-chocolat.jpg',
                 description: 'Nutritious whole wheat bread perfect for sandwiches'
             },
             {
                 id: '3',
-                name: 'French Baguette',
+                name: 'Pain aux Raisins',
                 price: 4.99,
                 category: 'bread',
-                image: 'https://images.pexels.com/photos/209206/pexels-photo-209206.jpeg?auto=compress&cs=tinysrgb&w=400',
+                image: 'images/pain aux raisins.jpg',
                 description: 'Classic French baguette with a golden crust'
             },
             
             // Pastries
             {
                 id: '4',
-                name: 'Butter Croissant',
+                name: 'Apple Turnover',
                 price: 3.99,
                 category: 'pastry',
-                image: 'https://images.pexels.com/photos/2135/food-france-morning-breakfast.jpg?auto=compress&cs=tinysrgb&w=400',
-                description: 'Flaky, buttery croissant baked to perfection'
+                image: 'images/Apple-Turnover.jpg',
+                description: 'Flaky pastry filled with spiced apples'
             },
             {
                 id: '5',
-                name: 'Chocolate Danish',
+                name: 'Cherry Cream Cheese Danish',
                 price: 4.49,
                 category: 'pastry',
-                image: 'https://images.pexels.com/photos/2067396/pexels-photo-2067396.jpeg?auto=compress&cs=tinysrgb&w=400',
-                description: 'Sweet pastry filled with rich chocolate'
+                image: 'images/Cherry-Cream-Cheese-Danish.jpg',
+                description: 'Sweet pastry filled with rich Cherry'
             },
             {
                 id: '6',
-                name: 'Apple Turnover',
+                name: 'Sugar Pursuit',
                 price: 3.79,
                 category: 'pastry',
-                image: 'https://images.pexels.com/photos/1775043/pexels-photo-1775043.jpeg?auto=compress&cs=tinysrgb&w=400',
-                description: 'Flaky pastry filled with spiced apples'
+                image: 'images/Sugar-Pursuit.jpg',
+                description: 'Flaky pastry filled with rich Sugar'
             },
             
             // Cakes
@@ -73,7 +73,7 @@ class ProductManager {
                 name: 'Chocolate Layer Cake',
                 price: 24.99,
                 category: 'cake',
-                image: 'https://images.pexels.com/photos/1126359/pexels-photo-1126359.jpeg?auto=compress&cs=tinysrgb&w=400',
+                image: 'images/Chocolate-Layer-Cake.jpg',
                 description: 'Rich chocolate cake with creamy frosting'
             },
             {
@@ -81,7 +81,7 @@ class ProductManager {
                 name: 'Red Velvet Cupcakes (6-pack)',
                 price: 18.99,
                 category: 'cake',
-                image: 'https://images.pexels.com/photos/1721932/pexels-photo-1721932.jpeg?auto=compress&cs=tinysrgb&w=400',
+                image: 'images/Red-Velvet-Cupcakes.jpg',
                 description: 'Classic red velvet cupcakes with cream cheese frosting'
             },
             {
@@ -89,7 +89,7 @@ class ProductManager {
                 name: 'Cheesecake Slice',
                 price: 6.99,
                 category: 'cake',
-                image: 'https://images.pexels.com/photos/140831/pexels-photo-140831.jpeg?auto=compress&cs=tinysrgb&w=400',
+                image: 'images/Cheesecake-Slice.jpg',
                 description: 'Creamy New York style cheesecake'
             },
             
@@ -99,7 +99,7 @@ class ProductManager {
                 name: 'Premium Coffee Blend',
                 price: 12.99,
                 category: 'beverage',
-                image: 'https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg?auto=compress&cs=tinysrgb&w=400',
+                image: 'images/Premium-Coffee-Blend.jpg',
                 description: 'Our signature coffee blend, freshly roasted'
             },
             {
@@ -107,7 +107,7 @@ class ProductManager {
                 name: 'Herbal Tea Selection',
                 price: 8.99,
                 category: 'beverage',
-                image: 'https://images.pexels.com/photos/1417945/pexels-photo-1417945.jpeg?auto=compress&cs=tinysrgb&w=400',
+                image: 'images/Herbal-Tea-Selection.jpg',
                 description: 'Assorted herbal teas for relaxation'
             },
             {
@@ -115,7 +115,7 @@ class ProductManager {
                 name: 'Fresh Orange Juice',
                 price: 4.99,
                 category: 'beverage',
-                image: 'https://images.pexels.com/photos/96974/pexels-photo-96974.jpeg?auto=compress&cs=tinysrgb&w=400',
+                image: 'images/Fresh-Orange-Juice.jpg',
                 description: 'Freshly squeezed orange juice'
             }
         ];
@@ -260,7 +260,7 @@ class ProductManager {
                         <div class="product-category">${categoryLabels[product.category] || 'Product'}</div>
                         <h5 class="product-name">${product.name}</h5>
                         <p class="product-description">${product.description || ''}</p>
-                        <div class="product-price">$${product.price.toFixed(2)}</div>
+                        <div class="product-price">EGP ${product.price.toFixed(2)}</div>
                         <div class="product-actions">
                             <button class="btn-add-cart" onclick="cartManager.addToCart('${product.id}')">
                                 <i class="fas fa-cart-plus me-2"></i>Add to Cart

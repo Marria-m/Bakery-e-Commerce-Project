@@ -26,45 +26,45 @@
 
 /* Consistent Navigation Styles */
 .navbar {
-    background: var(--white) !important;
+    background: var(--white);
     box-shadow: var(--shadow-sm);
 }
 
 .navbar-brand {
-    color: var(--dark-brown) !important;
-    font-weight: 700 !important;
-    font-size: 1.5rem !important;
+    color: var(--dark-brown);
+    font-weight: 700;
+    font-size: 1.5rem;
 }
 
 .navbar-brand:hover {
-    color: var(--medium-brown) !important;
+    color: var(--medium-brown);
 }
 
 .navbar .nav-link {
-    color: var(--dark-brown) !important;
-    font-weight: 500 !important;
+    color: var(--dark-brown);
+    font-weight: 500;
     transition: var(--transition-normal);
-    padding: 0.5rem 1rem !important;
+    padding: 0.5rem 1rem;
 }
 
 .navbar .nav-link:hover,
 .navbar .nav-link.active {
-    color: var(--medium-brown) !important;
+    color: var(--medium-brown);
 }
 
 .navbar .btn {
-    color: var(--dark-brown) !important;
+    color: var(--dark-brown);
     transition: var(--transition-normal);
 }
 
 .navbar .btn:hover {
-    color: var(--medium-brown) !important;
+    color: var(--medium-brown);
 }
 
 .logout-btn {
-    background: linear-gradient(135deg, var(--medium-brown), var(--dark-brown)) !important;
-    border: none !important;
-    color: var(--white) !important;
+    background: linear-gradient(135deg, var(--medium-brown), var(--dark-brown));
+    border: none;
+    color: var(--white);
     padding: 0.5rem 1rem;
     border-radius: 6px;
     font-weight: 500;
@@ -74,9 +74,9 @@
 .logout-btn:hover,
 .logout-btn:focus,
 .logout-btn:active {
-    background: linear-gradient(135deg, var(--dark-brown), var(--darkest-brown)) !important;
-    color: var(--white) !important;
-    border: none !important;
+    background: linear-gradient(135deg, var(--dark-brown), var(--darkest-brown));
+    color: var(--white);
+    border: none;
     transform: translateY(-1px);
 }
 
@@ -86,37 +86,37 @@
 .navbar .logout-btn:focus,
 .navbar .logout-btn:active,
 .navbar .logout-btn:visited {
-    color: var(--white) !important;
+    color: var(--white);
 }
 
 /* Cart Link and Badge */
 .cart-link {
-    position: relative !important;
-    color: var(--dark-brown) !important;
-    transition: var(--transition-normal) !important;
+    position: relative;
+    color: var(--dark-brown);
+    transition: var(--transition-normal);
 }
 
 .cart-link:hover {
-    color: var(--medium-brown) !important;
+    color: var(--medium-brown);
 }
 
 .cart-link.active {
-    color: var(--medium-brown) !important;
+    color: var(--medium-brown);
 }
 
 .cart-badge {
-    position: absolute !important;
-    top: -8px !important;
-    right: -8px !important;
-    background: var(--medium-brown) !important;
-    color: var(--white) !important;
-    border-radius: 50% !important;
-    padding: 0.25rem 0.5rem !important;
-    font-size: 0.75rem !important;
-    font-weight: 600 !important;
-    min-width: 1.5rem !important;
-    text-align: center !important;
-    line-height: 1 !important;
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: var(--medium-brown);
+    color: var(--white);
+    border-radius: 50%;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    min-width: 1.5rem;
+    text-align: center;
+    line-height: 1;
 }
 
 /* Custom Animation Classes */
@@ -177,8 +177,8 @@
     .animate-fade-left,
     .animate-fade-up,
     .animate-scale-in {
-        opacity: 1 !important;
-        transform: none !important;
+        opacity: 1;
+        transform: none;
     }
 }
 
@@ -187,8 +187,8 @@
 .no-js .animate-fade-left,
 .no-js .animate-fade-up,
 .no-js .animate-scale-in {
-    opacity: 1 !important;
-    transform: none !important;
+    opacity: 1;
+    transform: none;
 }
 
 /* Page Header Enhancements */
@@ -407,7 +407,7 @@
 }
 
 .text-success {
-    color: var(--medium-brown) !important;
+    color: var(--medium-brown);
 }
 
 /* Loading States */
@@ -435,7 +435,7 @@
 
 /* Navigation Enhancements */
 .navbar-brand {
-    color: var(--dark-brown) !important;
+    color: var(--dark-brown);
     font-weight: 700;
     font-size: 1.5rem;
 }
@@ -446,19 +446,19 @@
 }
 
 .nav-link {
-    color: var(--dark-brown) !important;
+    color: var(--dark-brown);
     font-weight: 500;
     transition: var(--transition-normal);
 }
 
 .nav-link:hover,
 .nav-link.active {
-    color: var(--medium-brown) !important;
+    color: var(--medium-brown);
 }
 
 .logout-btn {
     background: linear-gradient(135deg, var(--medium-brown), var(--dark-brown));
-    color: var(--white) !important;
+    color: var(--white);
     border: none;
     border-radius: 25px;
     padding: 0.5rem 1rem;
@@ -538,7 +538,7 @@
     }
     
     .card-body {
-        padding: 2rem 1.5rem !important;
+        padding: 2rem 1.5rem;
     }
     
     .form-actions .row {
@@ -550,7 +550,7 @@
     }
     
     .btn {
-        width: 100% !important;
+        width: 100%;
     }
 }
 
@@ -561,7 +561,7 @@
     }
     
     .card-body {
-        padding: 3rem 2rem !important;
+        padding: 3rem 2rem;
     }
 }
 

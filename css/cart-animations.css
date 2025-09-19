@@ -211,7 +211,7 @@
 }
 
 .card-header.bg-gradient {
-    background: linear-gradient(135deg, var(--medium-brown), var(--dark-brown)) !important;
+    background: linear-gradient(135deg, var(--medium-brown), var(--dark-brown));
 }
 
 /* Custom Animation Classes */
@@ -272,8 +272,8 @@
     .animate-fade-left,
     .animate-fade-up,
     .animate-scale-in {
-        opacity: 1 !important;
-        transform: none !important;
+        opacity: 1;
+        transform: none;
     }
 }
 
@@ -282,8 +282,8 @@
 .no-js .animate-fade-left,
 .no-js .animate-fade-up,
 .no-js .animate-scale-in {
-    opacity: 1 !important;
-    transform: none !important;
+    opacity: 1;
+    transform: none;
 }
 
 /* Hover effects for interactive elements */
@@ -493,11 +493,11 @@
 
 /* SweetAlert Custom Styles */
 .checkout-popup {
-    border-radius: 20px !important;
+    border-radius: 20px;
 }
 
 .success-popup {
-    border-radius: 20px !important;
+    border-radius: 20px;
 }
 
 .swal2-popup .checkout-summary {
@@ -518,7 +518,7 @@
 }
 
 .swal2-popup .delivery-info {
-    background: linear-gradient(135deg, var(--cream), var(--light-brown)) !important;
+    background: linear-gradient(135deg, var(--cream), var(--light-brown));
     border: 2px solid var(--medium-brown);
 }
 
@@ -531,12 +531,12 @@
 
 /* Border Custom Class */
 .border-custom {
-    border: 2px solid var(--cream) !important;
-    border-radius: 15px !important;
+    border: 2px solid var(--cream);
+    border-radius: 15px;
 }
 
 .border-custom:hover {
-    border-color: var(--medium-brown) !important;
+    border-color: var(--medium-brown);
 }
 
 /* Cart Item Enhancements */
@@ -616,7 +616,7 @@
 /* Checkout Button Loading State */
 .checkout-btn-loading {
     position: relative;
-    color: transparent !important;
+    color: transparent;
 }
 
 .checkout-btn-loading::after {
@@ -636,16 +636,16 @@
 
 /* Global Button Overrides - Consistent with Brand Colors */
 .btn {
-    border-radius: 8px !important;
-    font-weight: 500 !important;
-    transition: var(--transition-normal) !important;
-    text-transform: none !important;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: var(--transition-normal);
+    text-transform: none;
 }
 
 .btn-primary {
-    background: linear-gradient(135deg, var(--medium-brown), var(--dark-brown)) !important;
-    border: none !important;
-    color: var(--white) !important;
+    background: linear-gradient(135deg, var(--medium-brown), var(--dark-brown));
+    border: none;
+    color: var(--white);
     padding: 0.75rem 1.5rem;
     border-radius: 8px;
     font-weight: 500;
@@ -656,17 +656,17 @@
 .btn-primary:hover,
 .btn-primary:focus,
 .btn-primary:active {
-    background: linear-gradient(135deg, var(--dark-brown), var(--darkest-brown)) !important;
-    color: var(--white) !important;
+    background: linear-gradient(135deg, var(--dark-brown), var(--darkest-brown));
+    color: var(--white);
     transform: translateY(-2px);
     box-shadow: var(--shadow-md);
-    border: none !important;
+    border: none;
 }
 
 .btn-outline-primary {
-    background: transparent !important;
-    border: 2px solid var(--medium-brown) !important;
-    color: var(--medium-brown) !important;
+    background: transparent;
+    border: 2px solid var(--medium-brown);
+    color: var(--medium-brown);
     padding: 0.75rem 1.5rem;
     border-radius: 8px;
     font-weight: 500;
@@ -676,54 +676,54 @@
 .btn-outline-primary:hover,
 .btn-outline-primary:focus,
 .btn-outline-primary:active {
-    background: var(--medium-brown) !important;
-    border-color: var(--medium-brown) !important;
-    color: var(--white) !important;
+    background: var(--medium-brown);
+    border-color: var(--medium-brown);
+    color: var(--white);
     transform: translateY(-2px);
     box-shadow: var(--shadow-sm);
 }
 
 /* Navigation Styles */
 .navbar {
-    background: var(--white) !important;
+    background: var(--white);
     box-shadow: var(--shadow-sm);
 }
 
 .navbar-brand {
-    color: var(--dark-brown) !important;
-    font-weight: 700 !important;
-    font-size: 1.5rem !important;
+    color: var(--dark-brown);
+    font-weight: 700;
+    font-size: 1.5rem;
 }
 
 .navbar-brand:hover {
-    color: var(--medium-brown) !important;
+    color: var(--medium-brown);
 }
 
 .navbar .nav-link {
-    color: var(--dark-brown) !important;
-    font-weight: 500 !important;
+    color: var(--dark-brown);
+    font-weight: 500;
     transition: var(--transition-normal);
-    padding: 0.5rem 1rem !important;
+    padding: 0.5rem 1rem;
 }
 
 .navbar .nav-link:hover,
 .navbar .nav-link.active {
-    color: var(--medium-brown) !important;
+    color: var(--medium-brown);
 }
 
 .navbar .btn {
-    color: var(--dark-brown) !important;
+    color: var(--dark-brown);
     transition: var(--transition-normal);
 }
 
 .navbar .btn:hover {
-    color: var(--medium-brown) !important;
+    color: var(--medium-brown);
 }
 
 .logout-btn {
-    background: linear-gradient(135deg, var(--medium-brown), var(--dark-brown)) !important;
-    border: none !important;
-    color: var(--white) !important;
+    background: linear-gradient(135deg, var(--medium-brown), var(--dark-brown));
+    border: none;
+    color: var(--white);
     padding: 0.5rem 1rem;
     border-radius: 6px;
     font-weight: 500;
@@ -733,9 +733,9 @@
 .logout-btn:hover,
 .logout-btn:focus,
 .logout-btn:active {
-    background: linear-gradient(135deg, var(--dark-brown), var(--darkest-brown)) !important;
-    color: var(--white) !important;
-    border: none !important;
+    background: linear-gradient(135deg, var(--dark-brown), var(--darkest-brown));
+    color: var(--white);
+    border: none;
     transform: translateY(-1px);
 }
 
@@ -745,64 +745,64 @@
 .navbar .logout-btn:focus,
 .navbar .logout-btn:active,
 .navbar .logout-btn:visited {
-    color: var(--white) !important;
+    color: var(--white);
 }
 
 /* Cart Link and Badge */
 .cart-link {
-    position: relative !important;
-    color: var(--dark-brown) !important;
-    transition: var(--transition-normal) !important;
+    position: relative;
+    color: var(--dark-brown);
+    transition: var(--transition-normal);
 }
 
 .cart-link:hover {
-    color: var(--medium-brown) !important;
+    color: var(--medium-brown);
 }
 
 .cart-link.active {
-    color: var(--medium-brown) !important;
+    color: var(--medium-brown);
 }
 
 .cart-badge {
-    position: absolute !important;
-    top: -8px !important;
-    right: -8px !important;
-    background: var(--medium-brown) !important;
-    color: var(--white) !important;
-    border-radius: 50% !important;
-    padding: 0.25rem 0.5rem !important;
-    font-size: 0.75rem !important;
-    font-weight: 600 !important;
-    min-width: 1.5rem !important;
-    text-align: center !important;
-    line-height: 1 !important;
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: var(--medium-brown);
+    color: var(--white);
+    border-radius: 50%;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    min-width: 1.5rem;
+    text-align: center;
+    line-height: 1;
 }
 
 /* Form Controls */
 .form-control:focus {
-    border-color: var(--medium-brown) !important;
-    box-shadow: 0 0 0 0.2rem rgba(182, 136, 93, 0.25) !important;
+    border-color: var(--medium-brown);
+    box-shadow: 0 0 0 0.2rem rgba(182, 136, 93, 0.25);
 }
 
 .input-group .btn {
-    border-color: var(--medium-brown) !important;
+    border-color: var(--medium-brown);
 }
 
 /* Success/Warning/Error Button States */
 .btn-success {
-    background: linear-gradient(135deg, var(--success), #20c997) !important;
-    border: none !important;
-    color: var(--white) !important;
+    background: linear-gradient(135deg, var(--success), #20c997);
+    border: none;
+    color: var(--white);
 }
 
 .btn-warning {
-    background: linear-gradient(135deg, var(--warning), #e0a800) !important;
-    border: none !important;
-    color: var(--darkest-brown) !important;
+    background: linear-gradient(135deg, var(--warning), #e0a800);
+    border: none;
+    color: var(--darkest-brown);
 }
 
 .btn-danger {
-    background: linear-gradient(135deg, var(--danger), #c82333) !important;
-    border: none !important;
-    color: var(--white) !important;
+    background: linear-gradient(135deg, var(--danger), #c82333);
+    border: none;
+    color: var(--white);
 }

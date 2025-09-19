@@ -81,7 +81,10 @@ a {
 }
 
 img {
+    margin-top: 15vh;
     max-width: 100%;
+    max-height: 450px;
+    width: 100%;   
     height: auto;
 }
 
@@ -361,14 +364,6 @@ img {
     font-weight: 600;
 }
 
-.logout-btn {
-    color: var(--danger) !important;
-}
-
-.logout-btn:hover {
-    background: rgba(220, 53, 69, 0.1) !important;
-}
-
 /* Hero Section */
 .hero-section {
     height: 100vh;
@@ -466,7 +461,7 @@ img {
 
 .floating-badge {
     position: absolute;
-    top: var(--spacing-lg);
+    top: 100px;
     right: var(--spacing-lg);
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
@@ -1151,11 +1146,11 @@ img {
     .navbar,
     .footer,
     .btn {
-        display: none !important;
+        display: none;
     }
     
     body {
-        background: white !important;
-        color: black !important;
+        background: white;
+        color: black;
     }
 }
