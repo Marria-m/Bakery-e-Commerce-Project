@@ -1,10 +1,8 @@
-// Enhanced Shopping Cart Management Module for Sips & Bites
-// Utility function to format currency
+
 function formatCurrency(amount) {
     return `EGP ${amount.toFixed(2)}`;
 }
 
-// Utility function to show toast notifications
 function showToast(message, type = 'info') {
     if (typeof Swal !== 'undefined') {
         const Toast = Swal.mixin({
@@ -33,7 +31,7 @@ class CartManager {
         this.cart = this.getCart();
         this.promoCode = null;
         this.discount = 0;
-        this.isUpdating = false; // Prevent multiple simultaneous updates
+        this.isUpdating = false; 
         this.initializeCart();
     }
 
@@ -49,7 +47,6 @@ class CartManager {
         this.updateCartBadge();
     }
 
-    // Initialize cart functionality
     initializeCart() {
         if (document.getElementById('cartItems')) {
             this.displayCart();
@@ -57,14 +54,11 @@ class CartManager {
         }
     }
 
-    // Add product to cart
     addToCart(productId, quantity = 1) {
-        // Check if productManager exists, if not try to get product from localStorage
         let product = null;
         if (typeof productManager !== 'undefined' && productManager.getProductById) {
             product = productManager.getProductById(productId);
         } else {
-            // Fallback: get products from localStorage
             const products = JSON.parse(localStorage.getItem('products') || '[]');
             product = products.find(p => p.id === productId);
         }
@@ -91,19 +85,15 @@ class CartManager {
 
         this.saveCart();
         
-        // Show success toast with animation
         showToast(`"${product.name}" added to cart!`, 'success');
         
-        // Animate cart badge
         this.animateCartBadge();
         
-        // Update display if on cart page
         if (document.getElementById('cartItems')) {
             this.displayCart();
         }
     }
 
-    // Remove product from cart
     removeFromCart(productId) {
         const item = this.cart.find(item => item.id === productId);
         if (!item) return;
@@ -130,7 +120,6 @@ class CartManager {
         });
     }
 
-    // Update item quantity
     updateQuantity(productId, newQuantity) {
         const item = this.cart.find(item => item.id === productId);
         if (!item) return;
@@ -144,7 +133,6 @@ class CartManager {
 
         if (quantity > 10) {
             showToast('Maximum quantity is 10', 'warning');
-            // Reset the input to the current quantity
             const itemElement = document.querySelector(`[data-item-id="${productId}"]`);
             if (itemElement) {
                 const quantityInput = itemElement.querySelector('.quantity-input');
@@ -158,48 +146,40 @@ class CartManager {
         item.quantity = quantity;
         this.saveCart();
         
-        // Update only the specific item's display instead of rebuilding everything
         this.updateItemDisplay(productId);
         this.updateCartSummary();
     }
 
-    // Update display for a specific item
     updateItemDisplay(productId) {
         const item = this.cart.find(item => item.id === productId);
         if (!item) return;
 
         const itemElement = document.querySelector(`[data-item-id="${productId}"]`);
         if (itemElement) {
-            // Update quantity input
             const quantityInput = itemElement.querySelector('.quantity-input');
             if (quantityInput) {
                 quantityInput.value = item.quantity;
             }
 
-            // Update total price
             const totalElement = itemElement.querySelector('.cart-item-price.fw-bold');
             if (totalElement) {
                 totalElement.textContent = formatCurrency(item.price * item.quantity);
             }
 
-            // Update quantity buttons by finding them properly
             const quantityButtons = itemElement.querySelectorAll('.quantity-btn');
             if (quantityButtons.length >= 2) {
-                const minusBtn = quantityButtons[0]; // First button is minus
-                const plusBtn = quantityButtons[1];  // Second button is plus
+                const minusBtn = quantityButtons[0]; 
+                const plusBtn = quantityButtons[1];  
                 
-                // Update button states
                 minusBtn.disabled = item.quantity <= 1;
-                plusBtn.disabled = item.quantity >= 10; // Changed from 99 to 10 as requested
+                plusBtn.disabled = item.quantity >= 10;
                 
-                // Update onclick attributes
                 minusBtn.setAttribute('onclick', `cartManager.updateQuantity('${productId}', ${item.quantity - 1})`);
                 plusBtn.setAttribute('onclick', `cartManager.updateQuantity('${productId}', ${item.quantity + 1})`);
             }
         }
     }
 
-    // Display cart items
     displayCart() {
         if (this.isUpdating) {
             return;
@@ -230,10 +210,8 @@ class CartManager {
         cartItemsContainer.style.display = 'block';
         if (checkoutBtn) checkoutBtn.disabled = false;
 
-        // Clear container first
         cartItemsContainer.innerHTML = '';
         
-        // Add each cart item
         this.cart.forEach((item, index) => {
             const itemHTML = this.createCartItemHTML(item, index);
             cartItemsContainer.insertAdjacentHTML('beforeend', itemHTML);
@@ -241,7 +219,6 @@ class CartManager {
         
         this.updateCartSummary();
         
-        // Trigger animations after a small delay
         setTimeout(() => {
             const animatedElements = cartItemsContainer.querySelectorAll('.animate-fade-up');
             animatedElements.forEach(element => {
@@ -251,7 +228,6 @@ class CartManager {
         }, 100);
     }
 
-    // Create cart item HTML
     createCartItemHTML(item, index) {
         const categoryLabels = {
             bread: 'Bread',
@@ -313,23 +289,19 @@ class CartManager {
         `;
     }
 
-    // Display recommended products
     displayRecommendedProducts() {
         const recommendedContainer = document.getElementById('recommendedProducts');
         if (!recommendedContainer) return;
 
-        // Get products from productManager or localStorage
         let allProducts = [];
         if (typeof productManager !== 'undefined' && productManager.products) {
             allProducts = productManager.products;
         } else {
-            // Fallback: get products from localStorage
             allProducts = JSON.parse(localStorage.getItem('products') || '[]');
         }
 
         if (allProducts.length === 0) return;
 
-        // Get 3 random products not in cart
         const cartProductIds = this.cart.map(item => item.id);
         const availableProducts = allProducts.filter(product => 
             !cartProductIds.includes(product.id)
@@ -362,7 +334,6 @@ class CartManager {
         `).join('');
     }
 
-    // Shuffle array utility
     shuffleArray(array) {
         const shuffled = [...array];
         for (let i = shuffled.length - 1; i > 0; i--) {
@@ -372,7 +343,6 @@ class CartManager {
         return shuffled;
     }
 
-    // Update cart summary
     updateCartSummary() {
         const subtotalElement = document.getElementById('subtotal');
         const taxElement = document.getElementById('tax');
@@ -390,11 +360,9 @@ class CartManager {
         taxElement.textContent = formatCurrency(tax);
         totalElement.textContent = formatCurrency(total);
 
-        // Show discount if applied
         this.updateDiscountDisplay(discountAmount);
     }
 
-    // Update discount display
     updateDiscountDisplay(discountAmount) {
         let discountRow = document.querySelector('.discount-row');
         
@@ -419,7 +387,6 @@ class CartManager {
         }
     }
 
-    // Apply promo code
     applyPromoCode() {
         const promoInput = document.getElementById('promoCode');
         const code = promoInput.value.trim().toUpperCase();
@@ -429,7 +396,6 @@ class CartManager {
             return;
         }
 
-        // Valid promo codes
         const promoCodes = {
             'SWEET10': 10,
             'BAKERY15': 15,
@@ -454,12 +420,10 @@ class CartManager {
         }
     }
 
-    // Get cart subtotal
     getSubtotal() {
         return this.cart.reduce((total, item) => total + (item.price * item.quantity), 0);
     }
 
-    // Get cart total (including tax and discount)
     getTotal() {
         const subtotal = this.getSubtotal();
         const discountAmount = subtotal * (this.discount / 100);
@@ -467,12 +431,10 @@ class CartManager {
         return discountedSubtotal + (discountedSubtotal * 0.08);
     }
 
-    // Get total items count
     getTotalItems() {
         return this.cart.reduce((total, item) => total + item.quantity, 0);
     }
 
-    // Update cart badge
     updateCartBadge() {
         const cartBadge = document.getElementById('cartBadge');
         if (cartBadge) {
@@ -482,7 +444,6 @@ class CartManager {
         }
     }
 
-    // Animate cart badge
     animateCartBadge() {
         const cartBadge = document.getElementById('cartBadge');
         if (cartBadge) {
@@ -493,7 +454,6 @@ class CartManager {
         }
     }
 
-    // Clear cart
     clearCart() {
         Swal.fire({
             title: 'Clear Cart?',
@@ -519,7 +479,6 @@ class CartManager {
         });
     }
 
-    // Checkout process
     checkout() {
         if (this.cart.length === 0) {
             showToast('Your cart is empty!', 'error');
@@ -577,7 +536,6 @@ class CartManager {
             if (result.isConfirmed) {
                 this.processOrder();
             } else if (result.isDismissed) {
-                // Show cancellation message
                 Swal.fire({
                     title: 'Purchase Cancelled',
                     text: 'Your order has not been completed. You can continue shopping or modify your cart.',
@@ -593,9 +551,7 @@ class CartManager {
         });
     }
 
-    // Process order
     processOrder() {
-        // Show processing animation
         Swal.fire({
             title: 'Processing Your Order...',
             html: 'Please wait while we prepare your delicious order.',
@@ -607,12 +563,9 @@ class CartManager {
             }
         });
 
-        // Simulate API call delay
         setTimeout(() => {
-            // Generate order number
             const orderNumber = 'SD' + Date.now().toString().slice(-6);
             
-            // Save order to localStorage (in real app, this would be sent to server)
             const order = {
                 orderNumber: orderNumber,
                 items: [...this.cart],
@@ -628,7 +581,6 @@ class CartManager {
             orders.push(order);
             localStorage.setItem('orders', JSON.stringify(orders));
 
-            // Clear cart after successful order
             this.cart = [];
             this.promoCode = null;
             this.discount = 0;
@@ -687,7 +639,6 @@ class CartManager {
         }, 2500);
     }
 
-    // Get cart data for export
     getCartData() {
         return {
             items: this.cart,
@@ -701,19 +652,15 @@ class CartManager {
     }
 }
 
-// Initialize cart manager after DOM is loaded
 let cartManager;
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Small delay to ensure all scripts are loaded
     setTimeout(() => {
         cartManager = new CartManager();
-        // Make it globally available
         window.cartManager = cartManager;
     }, 100);
 });
 
-// Global functions
 function checkout() {
     if (cartManager) {
         cartManager.checkout();
@@ -730,11 +677,9 @@ function applyPromoCode() {
     }
 }
 
-// Make functions globally available
 window.checkout = checkout;
 window.applyPromoCode = applyPromoCode;
 
-// Add custom CSS for cart styling
 const cartStyles = `
     .cart-item-image-wrapper {
         position: relative;
@@ -824,7 +769,6 @@ const cartStyles = `
     }
 `;
 
-// Inject cart styles
 const cartStyleSheet = document.createElement('style');
 cartStyleSheet.textContent = cartStyles;
 document.head.appendChild(cartStyleSheet);

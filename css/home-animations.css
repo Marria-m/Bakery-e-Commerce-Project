@@ -1,6 +1,5 @@
-/* Home Page Animation Styles */
+Home Page Animation Styles
 
-/* Color Variables */
 :root {
     --cream: #E8D2B8;
     --light-brown: #E0C4A0;
@@ -8,21 +7,17 @@
     --dark-brown: #73411F;
     --darkest-brown: #452815;
     
-    /* Additional Colors */
     --white: #FFFFFF;
     --black: #1A1A1A;
     
-    /* Transitions */
     --transition-fast: all 0.2s ease;
     --transition-normal: all 0.3s ease;
     --transition-slow: all 0.5s ease;
     
-    /* Shadows */
     --shadow-sm: 0 2px 4px rgba(69, 40, 21, 0.1);
     --shadow-md: 0 4px 12px rgba(69, 40, 21, 0.15);
 }
 
-/* Consistent Navigation Styles */
 .navbar {
     background: var(--white);
     box-shadow: var(--shadow-sm);
@@ -78,7 +73,6 @@
     transform: translateY(-1px);
 }
 
-/* Ensure logout button text stays white in all states */
 .navbar .logout-btn,
 .navbar .logout-btn:hover,
 .navbar .logout-btn:focus,
@@ -87,7 +81,6 @@
     color: var(--white);
 }
 
-/* Cart Link and Badge */
 .cart-link {
     position: relative;
     color: var(--dark-brown);
@@ -117,7 +110,6 @@
     line-height: 1;
 }
 
-/* Custom Animation Classes */
 .animate-fade-right {
     opacity: 0;
     transform: translateX(-30px);
@@ -142,7 +134,6 @@
     transition: all 0.8s ease-out;
 }
 
-/* Animation triggered states */
 .animate-fade-right.animation-triggered {
     opacity: 1;
     transform: translateX(0);
@@ -163,7 +154,6 @@
     transform: scale(1);
 }
 
-/* Ensure content is visible by default on smaller screens */
 @media (max-width: 768px) {
     .animate-fade-right,
     .animate-fade-left,
@@ -174,7 +164,6 @@
     }
 }
 
-/* Fallback for when JavaScript is disabled or animations fail */
 .no-js .animate-fade-right,
 .no-js .animate-fade-left,
 .no-js .animate-fade-up,
@@ -187,7 +176,6 @@ noscript .animate-scale-in {
     transform: none;
 }
 
-/* Ensure hero content is always visible */
 .hero-section .animate-fade-right,
 .hero-section .animate-fade-left {
     animation: fadeInAuto 1s ease-out forwards;
@@ -204,13 +192,11 @@ noscript .animate-scale-in {
     }
 }
 
-/* Stagger animation delays */
 .animate-delay-100 { transition-delay: 0.1s; }
 .animate-delay-200 { transition-delay: 0.2s; }
 .animate-delay-300 { transition-delay: 0.3s; }
 .animate-delay-400 { transition-delay: 0.4s; }
 
-/* Hero Section Enhancements */
 .hero-section {
     background: linear-gradient(135deg, var(--cream), var(--light-brown));
 }
@@ -244,7 +230,6 @@ noscript .animate-scale-in {
     transform: translateY(-2px);
 }
 
-/* Feature Cards */
 .feature-card {
     background: var(--white);
     border: 1px solid var(--cream);
@@ -284,7 +269,6 @@ noscript .animate-scale-in {
     opacity: 0.8;
 }
 
-/* Stats Section */
 .stats-section {
     background: linear-gradient(135deg, var(--dark-brown), var(--darkest-brown));
     color: var(--white);
@@ -315,7 +299,6 @@ noscript .animate-scale-in {
     font-weight: 500;
 }
 
-/* Ensure stats are visible */
 .stats-section .animate-scale-in {
     opacity: 1;
     transform: scale(1);
@@ -340,7 +323,6 @@ noscript .animate-scale-in {
     }
 }
 
-/* Newsletter Section */
 .newsletter-section {
     background: linear-gradient(135deg, var(--cream), var(--light-brown));
 }
@@ -381,7 +363,6 @@ noscript .animate-scale-in {
     font-size: 1.1rem;
 }
 
-/* Popular Products Section */
 .popular-products {
     background: var(--white);
 }
@@ -398,7 +379,6 @@ noscript .animate-scale-in {
     font-size: 1.2rem;
 }
 
-/* Floating Badge Animation */
 .floating-badge {
     position: absolute;
     top: 20px;
@@ -418,7 +398,6 @@ noscript .animate-scale-in {
     50% { transform: translateY(-10px); }
 }
 
-/* Swiper Navigation Buttons */
 .swiper-button-next,
 .swiper-button-prev {
     color: var(--medium-brown);
@@ -444,7 +423,6 @@ noscript .animate-scale-in {
     opacity: 1;
 }
 
-/* Navbar Enhancements */
 .navbar-brand {
     color: var(--dark-brown);
     font-weight: 700;
@@ -481,7 +459,6 @@ noscript .animate-scale-in {
     transform: translateY(-2px);
 }
 
-/* Cart Badge */
 .cart-badge {
     background: var(--medium-brown);
     color: var(--white);
@@ -493,7 +470,6 @@ noscript .animate-scale-in {
     right: -10px;
 }
 
-/* Footer */
 .footer {
     background: var(--darkest-brown);
     color: var(--light-brown);
@@ -531,9 +507,7 @@ noscript .animate-scale-in {
     color: var(--medium-brown);
 }
 
-/* ===== RESPONSIVE DESIGN ===== */
 
-/* Mobile Phones (up to 576px) */
 @media (max-width: 575.98px) {
     .hero-title {
         font-size: 2rem;
@@ -582,17 +556,9 @@ noscript .animate-scale-in {
         padding: 2rem 1.5rem;
     }
     
-    .newsletter-form .input-group {
-        flex-direction: column;
-    }
-    
     .newsletter-form .form-control {
         border-radius: 25px;
         margin-bottom: 1rem;
-    }
-    
-    .newsletter-form .btn {
-        border-radius: 25px;
     }
     
     .floating-badge {
@@ -603,7 +569,6 @@ noscript .animate-scale-in {
     }
 }
 
-/* Tablets (576px to 768px) */
 @media (min-width: 576px) and (max-width: 767.98px) {
     .hero-title {
         font-size: 2.5rem;
@@ -621,12 +586,8 @@ noscript .animate-scale-in {
         padding: 1.75rem;
     }
     
-    .newsletter-card {
-        padding: 2.5rem;
-    }
 }
 
-/* Large Tablets and Small Desktops (768px to 992px) */
 @media (min-width: 768px) and (max-width: 991.98px) {
     .hero-title {
         font-size: 3rem;
@@ -641,7 +602,6 @@ noscript .animate-scale-in {
     }
 }
 
-/* General Mobile Optimizations */
 @media (max-width: 768px) {
     .navbar-brand {
         font-size: 1.25rem;
@@ -704,7 +664,6 @@ noscript .animate-scale-in {
     }
 }
 
-/* Ensure proper spacing and readability */
 @media (max-width: 992px) {
     .container {
         padding-left: 1rem;

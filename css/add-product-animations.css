@@ -1,6 +1,3 @@
-/* Add Product Page Animation Styles */
-
-/* Color Variables */
 :root {
     --cream: #E8D2B8;
     --light-brown: #E0C4A0;
@@ -8,23 +5,19 @@
     --dark-brown: #73411F;
     --darkest-brown: #452815;
     
-    /* Additional Colors */
     --white: #FFFFFF;
     --black: #1A1A1A;
     
-    /* Shadows */
     --shadow-sm: 0 2px 4px rgba(69, 40, 21, 0.1);
     --shadow-md: 0 4px 12px rgba(69, 40, 21, 0.15);
     --shadow-lg: 0 8px 25px rgba(69, 40, 21, 0.2);
     --shadow-xl: 0 15px 40px rgba(69, 40, 21, 0.25);
     
-    /* Transitions */
     --transition-fast: all 0.2s ease;
     --transition-normal: all 0.3s ease;
     --transition-slow: all 0.5s ease;
 }
 
-/* Consistent Navigation Styles */
 .navbar {
     background: var(--white);
     box-shadow: var(--shadow-sm);
@@ -80,7 +73,6 @@
     transform: translateY(-1px);
 }
 
-/* Ensure logout button text stays white in all states */
 .navbar .logout-btn,
 .navbar .logout-btn:hover,
 .navbar .logout-btn:focus,
@@ -89,7 +81,6 @@
     color: var(--white);
 }
 
-/* Cart Link and Badge */
 .cart-link {
     position: relative;
     color: var(--dark-brown);
@@ -119,7 +110,6 @@
     line-height: 1;
 }
 
-/* Custom Animation Classes */
 .animate-fade-right {
     opacity: 0;
     transform: translateX(-30px);
@@ -144,7 +134,6 @@
     transition: all 0.8s ease-out;
 }
 
-/* Animation triggered states */
 .animate-fade-right.animation-triggered {
     opacity: 1;
     transform: translateX(0);
@@ -165,13 +154,11 @@
     transform: scale(1);
 }
 
-/* Stagger animation delays */
 .animate-delay-100 { transition-delay: 0.1s; }
 .animate-delay-200 { transition-delay: 0.2s; }
 .animate-delay-300 { transition-delay: 0.3s; }
 .animate-delay-400 { transition-delay: 0.4s; }
 
-/* Ensure content is visible by default on smaller screens */
 @media (max-width: 768px) {
     .animate-fade-right,
     .animate-fade-left,
@@ -182,7 +169,6 @@
     }
 }
 
-/* Fallback for when JavaScript is disabled */
 .no-js .animate-fade-right,
 .no-js .animate-fade-left,
 .no-js .animate-fade-up,
@@ -191,7 +177,6 @@
     transform: none;
 }
 
-/* Page Header Enhancements */
 .page-header {
     background: linear-gradient(135deg, var(--cream), var(--light-brown));
     padding: 120px 0 80px;
@@ -210,7 +195,6 @@
     opacity: 0.8;
 }
 
-/* Admin Access Alert */
 .admin-access-alert {
     background: linear-gradient(135deg, var(--medium-brown), var(--dark-brown));
     color: var(--white);
@@ -226,7 +210,6 @@
     margin-right: 0.5rem;
 }
 
-/* Form Styling */
 .card.border-custom {
     border: 2px solid var(--cream);
     border-radius: 20px;
@@ -266,7 +249,6 @@
     font-weight: 700;
 }
 
-/* Form Groups */
 .form-group {
     margin-bottom: 1.5rem;
 }
@@ -329,7 +311,6 @@
     margin-right: 0.25rem;
 }
 
-/* Image Preview */
 .image-preview-wrapper {
     max-width: 300px;
     margin: 0 auto;
@@ -351,14 +332,12 @@
     border-radius: 15px;
 }
 
-/* Form Actions */
 .form-actions {
     margin-top: 2rem;
     padding-top: 2rem;
     border-top: 2px solid var(--cream);
 }
 
-/* Button Styling */
 .btn-primary {
     background: linear-gradient(135deg, var(--medium-brown), var(--dark-brown));
     border: none;
@@ -394,7 +373,6 @@
     transform: translateY(-2px);
 }
 
-/* Tips Card */
 .card-title {
     color: var(--dark-brown);
     margin-bottom: 1rem;
@@ -410,7 +388,6 @@
     color: var(--medium-brown);
 }
 
-/* Loading States */
 .spinner {
     display: inline-block;
     width: 1rem;
@@ -426,14 +403,12 @@
     100% { transform: rotate(360deg); }
 }
 
-/* Invalid Feedback */
 .invalid-feedback {
     color: #dc3545;
     font-size: 0.875rem;
     margin-top: 0.25rem;
 }
 
-/* Navigation Enhancements */
 .navbar-brand {
     color: var(--dark-brown);
     font-weight: 700;
@@ -481,7 +456,6 @@
     right: -10px;
 }
 
-/* Footer */
 .footer {
     background: var(--darkest-brown);
     color: var(--light-brown);
@@ -519,9 +493,6 @@
     color: var(--medium-brown);
 }
 
-/* ===== RESPONSIVE DESIGN ===== */
-
-/* Mobile Phones (up to 576px) */
 @media (max-width: 575.98px) {
     .page-title {
         font-size: 2rem;
@@ -554,7 +525,6 @@
     }
 }
 
-/* Tablets (576px to 768px) */
 @media (min-width: 576px) and (max-width: 767.98px) {
     .page-title {
         font-size: 2.5rem;
@@ -565,7 +535,6 @@
     }
 }
 
-/* General Mobile Optimizations */
 @media (max-width: 768px) {
     .page-header {
         padding: 100px 0 60px;
@@ -597,7 +566,6 @@
     }
 }
 
-/* Admin-only visibility */
 .admin-only {
     display: none;
 }
@@ -610,7 +578,6 @@
     display: inline-block;
 }
 
-/* Success animation */
 .success-animation {
     animation: successPulse 0.6s ease-out;
 }

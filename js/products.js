@@ -1,4 +1,3 @@
-// Enhanced Products Management Module for Sweet Delights Bakery
 class ProductManager {
     constructor() {
         this.products = this.getProducts();
@@ -6,7 +5,7 @@ class ProductManager {
         this.initializeProducts();
     }
 
-    // Get products from localStorage or initialize with bakery products
+    // Get products from localStorage
     getProducts() {
         const savedProducts = localStorage.getItem('products');
         if (savedProducts) {
@@ -570,8 +569,6 @@ class ProductManager {
     }
 }
 
-// Initialize product manager
 const productManager = new ProductManager();
 
-// Export for global use
 window.productManager = productManager;

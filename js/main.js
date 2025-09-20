@@ -1,6 +1,3 @@
-// Enhanced Main JavaScript file for Sweet Delights Bakery
-
-// Global variables and initialization
 document.addEventListener('DOMContentLoaded', function() {
     initializeApp();
 });
@@ -16,7 +13,6 @@ function initializeApp() {
     initializeCustomAnimations();
 }
 
-// Initialize Swiper slider
 function initializeSwiper() {
     if (document.querySelector('.heroSwiper')) {
         const swiper = new Swiper('.heroSwiper', {
@@ -42,7 +38,6 @@ function initializeSwiper() {
             },
             on: {
                 slideChange: function () {
-                    // Add custom animations on slide change
                     const activeSlide = this.slides[this.activeIndex];
                     const heroText = activeSlide.querySelector('.hero-text');
                     const heroImage = activeSlide.querySelector('.hero-image');
@@ -66,7 +61,6 @@ function initializeSwiper() {
     }
 }
 
-// Initialize custom animations using Intersection Observer
 function initializeCustomAnimations() {
     const animatedElements = document.querySelectorAll('.animate-slide-right, .animate-slide-left, .animate-fade-up, .animate-fade-right, .animate-fade-left, .animate-scale-in');
     
@@ -75,7 +69,6 @@ function initializeCustomAnimations() {
             entries.forEach(entry => {
                 if (entry.isIntersecting && !entry.target.classList.contains('animation-triggered')) {
                     entry.target.classList.add('animation-triggered');
-                    // The CSS animations will automatically trigger
                 }
             });
         }, { 
@@ -86,16 +79,14 @@ function initializeCustomAnimations() {
         animatedElements.forEach(element => observer.observe(element));
     }
     
-    // Trigger hero animations immediately since they should be visible on load
     const heroElements = document.querySelectorAll('.hero-section .animate-fade-right, .hero-section .animate-fade-left');
     heroElements.forEach(element => {
         setTimeout(() => {
             element.classList.add('animation-triggered');
-        }, 500); // Small delay for smooth appearance
+        }, 500); 
     });
 }
 
-// Initialize counter animations
 function initializeCounters() {
     const counters = document.querySelectorAll('.stat-number[data-count]');
     
@@ -118,7 +109,6 @@ function initializeCounters() {
         updateCounter();
     };
     
-    // Use Intersection Observer to trigger counters when visible
     if (counters.length > 0) {
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -133,7 +123,6 @@ function initializeCounters() {
     }
 }
 
-// Initialize newsletter form
 function initializeNewsletterForm() {
     const newsletterForm = document.getElementById('newsletterForm');
     if (newsletterForm) {
@@ -153,14 +142,12 @@ function initializeNewsletterForm() {
                 return;
             }
             
-            // Show loading state
             const submitBtn = this.querySelector('button[type="submit"]');
             const originalText = submitBtn.innerHTML;
             showLoading(submitBtn, 'Subscribing...');
             
-            // Simulate API call
             setTimeout(() => {
-                // Save to localStorage (in real app, this would be sent to server)
+                // Save to localStorage
                 const subscribers = JSON.parse(localStorage.getItem('newsletter_subscribers') || '[]');
                 if (!subscribers.includes(email)) {
                     subscribers.push(email);
@@ -199,11 +186,9 @@ function initializeScrollEffects() {
         });
     }
     
-    // Add scroll-to-top button
     createScrollToTopButton();
 }
 
-// Create scroll to top button
 function createScrollToTopButton() {
     const scrollBtn = document.createElement('button');
     scrollBtn.innerHTML = '<i class="fas fa-arrow-up"></i>';
@@ -246,7 +231,6 @@ function createScrollToTopButton() {
     document.body.appendChild(scrollBtn);
 }
 
-// Update cart badge
 function updateCartBadge() {
     const cartBadge = document.getElementById('cartBadge');
     if (cartBadge) {
@@ -255,7 +239,6 @@ function updateCartBadge() {
         cartBadge.textContent = totalItems;
         cartBadge.style.display = totalItems > 0 ? 'inline' : 'none';
         
-        // Add animation when cart updates
         if (totalItems > 0) {
             cartBadge.style.animation = 'pulse 0.6s ease-in-out';
             setTimeout(() => {
@@ -265,7 +248,6 @@ function updateCartBadge() {
     }
 }
 
-// Initialize image preview for add product form
 function initializeImagePreview() {
     const imageUrlInput = document.getElementById('productImage');
     const previewContainer = document.getElementById('imagePreviewContainer');
@@ -278,7 +260,6 @@ function initializeImagePreview() {
                 previewImage.src = url;
                 previewContainer.style.display = 'block';
                 
-                // Add loading state
                 previewImage.style.opacity = '0.5';
                 
                 previewImage.onload = function() {
@@ -296,7 +277,6 @@ function initializeImagePreview() {
     }
 }
 
-// Validate image URL
 function isValidImageUrl(url) {
     try {
         new URL(url);
@@ -311,13 +291,11 @@ function isValidImageUrl(url) {
     }
 }
 
-// Validate email
 function isValidEmail(email) {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
 }
 
-// Utility function to format currency
 function formatCurrency(amount) {
     return new Intl.NumberFormat('en-US', {
         style: 'currency',
@@ -325,12 +303,10 @@ function formatCurrency(amount) {
     }).format(amount);
 }
 
-// Utility function to generate unique ID
 function generateId() {
     return Date.now().toString(36) + Math.random().toString(36).substr(2);
 }
 
-// Loading state management
 function showLoading(element, text = 'Loading...') {
     const spinner = '<span class="spinner me-2"></span>';
     element.innerHTML = spinner + text;
@@ -342,7 +318,6 @@ function hideLoading(element, originalText) {
     element.disabled = false;
 }
 
-// Enhanced toast notification
 function showToast(message, type = 'success') {
     const Toast = Swal.mixin({
         toast: true,
@@ -375,7 +350,6 @@ function showToast(message, type = 'success') {
     });
 }
 
-// Debounce function
 function debounce(func, wait) {
     let timeout;
     return function executedFunction(...args) {
@@ -388,7 +362,6 @@ function debounce(func, wait) {
     };
 }
 
-// Local storage helper functions
 const Storage = {
     get: (key, defaultValue = null) => {
         try {
@@ -425,7 +398,6 @@ const Storage = {
     }
 };
 
-// Animation utilities
 function fadeIn(element, duration = 300) {
     element.style.opacity = '0';
     element.style.display = 'block';
@@ -454,7 +426,6 @@ function fadeOut(element, duration = 300) {
     }, 50);
 }
 
-// Add custom CSS animations
 const customAnimations = `
     @keyframes slideInLeft {
         from {
@@ -517,12 +488,10 @@ const customAnimations = `
     }
 `;
 
-// Inject custom CSS
 const styleSheet = document.createElement('style');
 styleSheet.textContent = customAnimations;
 document.head.appendChild(styleSheet);
 
-// Initialize app when DOM is loaded
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initializeApp);
 } else {
@@ -530,10 +499,8 @@ if (document.readyState === 'loading') {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Remove no-js class if JavaScript is enabled
     document.documentElement.classList.remove('no-js');
     
-    // Force trigger animations after a short delay
     setTimeout(function() {
         const animatedElements = document.querySelectorAll('.animate-fade-right, .animate-fade-left, .animate-fade-up, .animate-scale-in');
         animatedElements.forEach(function(element) {
@@ -543,7 +510,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }, 1000);
     
-    // Initialize admin controls after auth is loaded
     setTimeout(function() {
         if (window.authManager) {
             window.authManager.initAdminControls();
@@ -551,7 +517,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }, 100);
 });
 
-// Global function to check admin access for navigation
 function checkAdminAccess(event) {
     if (window.authManager && !window.authManager.isAdmin()) {
         event.preventDefault();
@@ -567,7 +532,6 @@ function checkAdminAccess(event) {
     return true;
 }
 
-// Export functions for global use
 window.updateCartBadge = updateCartBadge;
 window.showToast = showToast;
 window.formatCurrency = formatCurrency;
